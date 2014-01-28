@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>cli.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="cli.html">
+                cli.js
+              </a>
+            
+              
+              <a class="source" href="index.html">
+                index.js
+              </a>
+            
+              
+              <a class="source" href="middleware.html">
+                middleware.js
+              </a>
+            
+              
+              <a class="source" href="processor.html">
+                processor.js
+              </a>
+            
+              
+              <a class="source" href="watcher.html">
+                watcher.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>cli.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> processor = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./processor"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This is a simple command-line wrapper around the processor, 
+supporting the following variations of inputs and outputs:</p>
+<pre><code class="lang-`">inputfile.LESS -&gt; outputfile.CSS
+inputfile.LESS -&gt; /output/path
+/input/path -&gt; /output/path
+</code></pre>
+<p>The optional third argument specifies the options file (a Node.JS module).
+Options:</p>
+<ul>
+<li>&quot;watcher_match_pattern&quot;: filter for file names </li>
+<li>&quot;debug&quot;: Enables debugging output</li>
+<li>&quot;force&quot;: Forces overwrite of any existing CSS files</li>
+<li>&quot;less&quot; : An object passed directly to the <a href="https://github.com/less/less.js/#configuration">less Parser</a>.</li>
+</ul>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-comment">/* Command Line Interface */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">CLI</span><span class="hljs-params">(callback)</span> {</span>
+    <span class="hljs-keyword">if</span>(process.argv.length &lt; <span class="hljs-number">3</span>) {
+        console.log(<span class="hljs-string">"Usage: node cli /path/to/input.less /path/to/output.css options.js"</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">var</span> input = process.argv[<span class="hljs-number">2</span>] || <span class="hljs-string">""</span>,
+    output = process.argv[<span class="hljs-number">3</span>] || <span class="hljs-string">""</span>,
+    optionsjs = process.argv[<span class="hljs-number">4</span>] || <span class="hljs-string">""</span>,
+    options = (optionsjs.length &gt; <span class="hljs-number">0</span>) ? <span class="hljs-built_in">require</span>(optionsjs) : {};
+
+    processor.resolve(input, output, options, callback);
+}
+
+CLI(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span> console.log(<span class="hljs-string">"Done."</span>); });</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
