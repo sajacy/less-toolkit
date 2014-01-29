@@ -129,7 +129,7 @@ var generateNoCheck = module.exports.generateNoCheck = function(input, output, l
                         callback();
                         return; 
                     }
-                    var css = tree.toCSS();
+                    var css = tree.toCSS(less_options);
                     fs.writeFile(output, css, 'utf8', callback);
             });
         } catch(ex) {
