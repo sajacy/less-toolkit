@@ -35,7 +35,7 @@ Options:
  - "less" : An object passed directly to the [less Parser](https://github.com/less/less.js/#configuration).
 
 
-[Source documentation](docs/cli.html)
+[Source documentation](http://htmlpreview.github.io/?https://github.com/sajacy/less-toolkit/blob/master/docs/cli.html)
 
 
 #### File Watcher 
@@ -65,7 +65,7 @@ Options:
  - "force": Forces overwrite of any existing CSS files
  - "less" : An object passed directly to the [less Parser](https://github.com/less/less.js/#configuration).
 
-[Source documentation](docs/watcher.html)
+[Source documentation](http://htmlpreview.github.io/?https://github.com/sajacy/less-toolkit/blob/master/docs/watcher.html)
 
 
 #### Middleware 
@@ -101,7 +101,7 @@ Options:
     }
 ```
 
-[Source documentation](docs/middleware.html)
+[Source documentation](http://htmlpreview.github.io/?https://github.com/sajacy/less-toolkit/blob/master/docs/middleware.html)
 
 
 #### Processor library
@@ -109,7 +109,7 @@ A simple wrapper around the core Less parser.  It takes an input, output, compil
 This library is re-used by the CLI, File Watcher, and Middleware.
 
 
-[Source documentation](docs/processor.html)
+[Source documentation](http://htmlpreview.github.io/?https://github.com/sajacy/less-toolkit/blob/master/docs/processor.html)
 
 
 [License](LICENSE)
