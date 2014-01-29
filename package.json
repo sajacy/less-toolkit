@@ -2,6 +2,12 @@
   "name": "less-toolkit",
   "version": "1.0.0",
   "description": "Node.JS developer utilities for working with LESS files.",
+  "license": "MIT",
+  "keywords": [
+    "less",
+    "middleware",
+    "watch"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/sajacy/less-toolkit.git"
